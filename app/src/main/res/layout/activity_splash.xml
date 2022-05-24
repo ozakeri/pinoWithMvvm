@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.SplashActivity"
+    android:background="@drawable/splash_background">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/logo_bus_tehran"
+        android:visibility="gone"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_appLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/app_logo_two" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/txt_site"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/splash_logo_one" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="170dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/img_appLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/splash_logo_two" />
+
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/waitProgress"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        app:cpv_animAutostart="true"
+        app:cpv_color="@color/mdtp_accent_color_dark"
+        app:cpv_indeterminate="true" />
+
+
+</RelativeLayout>

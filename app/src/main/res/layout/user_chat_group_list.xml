@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:padding="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/groupIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/groupe_icon"
+                android:gravity="center"
+                android:textColor="#000000" />
+
+            <com.gap.pino_copy.util.CustomTextView
+                android:id="@+id/counter_VT"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/circle_background"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="12sp" />
+
+            <com.gap.pino_copy.util.CustomTextView
+                android:id="@+id/date_VT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@+id/counter_VT"
+                android:text="---"
+                android:textColor="#a39999"
+                android:textSize="10sp" />
+
+            <com.gap.pino_copy.util.CustomTextView
+                android:id="@+id/group_VT"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_toLeftOf="@+id/groupIcon"
+                android:text="Name"
+                android:gravity="center_vertical"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginTop="10dp">
+
+            <com.gap.pino_copy.util.CustomTextView
+                android:id="@+id/message_VT"
+                android:textSize="12sp"
+                android:layout_marginRight="20dp"
+                android:textColor="#a39999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/name_VT"/>
+
+            <com.gap.pino_copy.util.CustomTextView
+                android:id="@+id/name_VT"
+                android:textSize="12sp"
+                android:layout_marginRight="20dp"
+                android:textColor="#a39999"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

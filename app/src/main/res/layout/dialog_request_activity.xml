@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:id="@+id/container_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <RelativeLayout
+                android:id="@+id/closeIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/ic_closedialog" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/black" />
+
+    </LinearLayout>
+
+    <com.gap.pino_copy.util.CustomTextView
+        android:id="@+id/txt_title_one"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textColor="#000"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/label_message_dialogAttachFile_camera" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black" />
+
+    <com.gap.pino_copy.util.CustomTextView
+        android:id="@+id/description_locate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/fav"
+        android:visibility="gone"/>
+
+    <com.gap.pino_copy.util.CustomTextView
+        android:id="@+id/txt_title_two"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textColor="#000"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:text="@string/label_message_dialogAttachFile_gallery" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black" />
+
+</LinearLayout>
