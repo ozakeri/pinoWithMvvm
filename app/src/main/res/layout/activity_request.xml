@@ -409,9 +409,12 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_margin="5dp"
-                    android:textColor="@color/mdtp_red_focused"
-                    android:text="افزودن پیوست  " />
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="افزودن پیوست  "
+                    android:textColor="@color/mdtp_red_focused" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img_attach"
@@ -431,7 +434,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_attach"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:layout_centerHorizontal="true"/>
 
             <Button
                 android:id="@+id/btn_sendRequest"
@@ -439,13 +443,9 @@
                 android:layout_height="50dp"
                 android:layout_below="@+id/recycler_view_attach"
                 android:layout_centerInParent="true"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_margin="20dp"
                 android:background="@drawable/gradient"
                 android:elevation="10dp"
-                android:enabled="false"
                 android:stateListAnimator="@null"
                 android:text=" ثبت درخواست "
                 android:textColor="@color/mdtp_red_focused"

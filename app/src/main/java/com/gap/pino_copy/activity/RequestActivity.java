@@ -22,11 +22,10 @@ import java.util.Objects;
 
 public class RequestActivity extends AppCompatActivity {
 
-    private AppCompatTextView txt_year, txt_month, txt_day, txt_gender, txt_status, txt_marriageYear, txt_marriageMonth, txt_marriageDay,txt_dateMarriageTitle;
+    private AppCompatTextView txt_year, txt_month, txt_day, txt_gender, txt_status, txt_marriageYear, txt_marriageMonth, txt_marriageDay, txt_dateMarriageTitle;
     private EditText txt_nationalCode;
-    private RelativeLayout marriageDate;
-    private boolean marriageStatus = false;
     private LinearLayout marriageLinearLayout;
+    private RelativeLayout layout_attach;
 
 
     @Override
@@ -41,17 +40,16 @@ public class RequestActivity extends AppCompatActivity {
         txt_day = findViewById(R.id.txt_day);
         txt_gender = findViewById(R.id.txt_gender);
         txt_status = findViewById(R.id.txt_status);
-        marriageDate = findViewById(R.id.marriageDate);
+        RelativeLayout marriageDate = findViewById(R.id.marriageDate);
         txt_dateMarriageTitle = findViewById(R.id.txt_dateMarriageTitle);
         txt_marriageYear = findViewById(R.id.txt_marriageYear);
         txt_marriageMonth = findViewById(R.id.txt_marriageMonth);
         txt_marriageDay = findViewById(R.id.txt_marriageDay);
         marriageLinearLayout = findViewById(R.id.marriageLinearLayout);
-
+        layout_attach = findViewById(R.id.layout_attach);
 
         txt_dateMarriageTitle.setVisibility(View.GONE);
         marriageLinearLayout.setVisibility(View.GONE);
-
 
         txt_marriageYear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,15 +132,17 @@ public class RequestActivity extends AppCompatActivity {
             }
         });
 
-
         findViewById(R.id.btn_sendRequest).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("nationalCodeIsValid=====" + nationalCodeIsValid(txt_nationalCode.getText().toString()));
+                if (nationalCodeIsValid(txt_nationalCode.getText().toString())) {
+
+                } else {
+
+                }
             }
         });
     }
-
 
     public void showDialog(String title1, String title2, String str_txt) {
         Dialog dialog = new Dialog(RequestActivity.this);
@@ -164,7 +164,6 @@ public class RequestActivity extends AppCompatActivity {
                     txt_gender.setText(title1);
                 } else {
                     txt_status.setText(title1);
-                    marriageStatus = true;
                     txt_dateMarriageTitle.setVisibility(View.VISIBLE);
                     marriageLinearLayout.setVisibility(View.VISIBLE);
                 }
@@ -180,7 +179,6 @@ public class RequestActivity extends AppCompatActivity {
                     txt_gender.setText(title2);
                 } else {
                     txt_status.setText(title2);
-                    marriageStatus = false;
                     txt_dateMarriageTitle.setVisibility(View.GONE);
                     marriageLinearLayout.setVisibility(View.GONE);
                 }
