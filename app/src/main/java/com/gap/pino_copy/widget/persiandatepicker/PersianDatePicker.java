@@ -77,7 +77,7 @@ public class PersianDatePicker extends LinearLayout {
          * maxYear attributes are not set, use (current year - 10) as min and
          * (current year + 10) as max.
          */
-        minYear = a.getInt(R.styleable.PersianDatePicker_minYear, pCalendar.getPersianYear() - 50);
+        minYear = a.getInt(R.styleable.PersianDatePicker_minYear, pCalendar.getPersianYear() - 70);
         maxYear = a.getInt(R.styleable.PersianDatePicker_maxYear, pCalendar.getPersianYear() + 0);
         yearNumberPicker.setMinValue(minYear);
         yearNumberPicker.setMaxValue(maxYear);

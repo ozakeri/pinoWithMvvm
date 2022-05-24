@@ -52,8 +52,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
+
         <activity
             android:name=".activity.RequestActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
             android:exported="false" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

@@ -209,7 +209,6 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sendChatMessage("");
-
             }
         });
 
@@ -845,6 +844,7 @@ public class ChatActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST:
                 if (grantResults.length > 0) {
