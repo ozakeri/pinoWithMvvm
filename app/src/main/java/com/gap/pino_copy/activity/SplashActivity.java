@@ -97,10 +97,11 @@ public class SplashActivity extends AppCompatActivity {
 
 
                             sleep(4 * 1000);
-                           // Intent i = new Intent(SplashActivity.this, MainActivity.class);
-                            Intent i = new Intent(SplashActivity.this, HomeActivity.class);
+                            Intent i = new Intent(SplashActivity.this, MainActivity.class);
                             startActivity(i);
-                            finish();
+                     /*       Intent i = new Intent(SplashActivity.this, HomeActivity.class);
+                            startActivity(i);
+                            finish();*/
 
                            // services.resumeChatMessageAttachFileList();
                            // services.resumeAttachFileList("");
@@ -114,10 +115,11 @@ public class SplashActivity extends AppCompatActivity {
                     } else {
 
                         sleep(4 * 1000);
-                        // Intent i = new Intent(SplashActivity.this, MainActivity.class);
-                        Intent i = new Intent(SplashActivity.this, HomeActivity.class);
+                        Intent i = new Intent(SplashActivity.this, MainActivity.class);
                         startActivity(i);
-                        finish();
+                       /* Intent i = new Intent(SplashActivity.this, HomeActivity.class);
+                        startActivity(i);
+                        finish();*/
                     }
 
                 } catch (Exception e) {

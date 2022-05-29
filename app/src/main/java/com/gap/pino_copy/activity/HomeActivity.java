@@ -168,7 +168,7 @@ public class HomeActivity extends AppCompatActivity {
                         // Get new FCM registration token
                         String token = task.getResult();
                         System.out.println("token======" + token);
-                        // sendTokenToServer(token);
+                        sendTokenToServer(token);
                     }
                 });
 
@@ -478,7 +478,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST")) {
-                permissionList.add(new Permission("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST1"));
+                //permissionList.add(new Permission("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST1"));
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST")) {
@@ -486,11 +486,11 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_CREATE_COMPLAINT_REPORT")) {
-                permissionList.add(new Permission("ROLE_APP_INSPECTION_CREATE_COMPLAINT_REPORT"));
+                //permissionList.add(new Permission("ROLE_APP_INSPECTION_CREATE_COMPLAINT_REPORT"));
             }
 
             if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_READ_NOTIFICATION_MESSAGE_LIST") || application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_WRITE_NOTIFICATION_MESSAGE")) {
-                permissionList.add(new Permission("ROLE_APP_INSPECTION_WRITE_NOTIFICATION_MESSAGE"));
+                //permissionList.add(new Permission("ROLE_APP_INSPECTION_WRITE_NOTIFICATION_MESSAGE"));
             }
 
             // RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 3);

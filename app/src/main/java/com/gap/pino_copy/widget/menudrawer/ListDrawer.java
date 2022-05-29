@@ -75,13 +75,13 @@ public class ListDrawer {
             //dataList.add(new DrawerItem(R.string.label_menu_line, R.drawable.line));
         }
         if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST")) {
-            dataList.add(new DrawerItem(R.string.label_menu_form, R.drawable.forms));
+            //dataList.add(new DrawerItem(R.string.label_menu_form, R.drawable.forms));
         }
         if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_CREATE_COMPLAINT_REPORT")) {
-            dataList.add(new DrawerItem(R.string.label_menu_report, R.drawable.report));
+            //dataList.add(new DrawerItem(R.string.label_menu_report, R.drawable.report));
         }
         if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_READ_NOTIFICATION_MESSAGE_LIST") || application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_WRITE_NOTIFICATION_MESSAGE")) {
-            dataList.add(new DrawerItem(R.string.label_menu_notification, R.drawable.massage));
+            //dataList.add(new DrawerItem(R.string.label_menu_notification, R.drawable.massage));
         }
 
         if (application.getPermissionMap().containsKey("ROLE_APP_INSPECTION_ENTITY_FORM_VIEW_LIST")) {

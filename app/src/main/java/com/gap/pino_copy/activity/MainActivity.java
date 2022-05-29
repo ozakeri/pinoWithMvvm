@@ -86,7 +86,8 @@ public class MainActivity extends AppCompatActivity {
          * check userList
          * */
         if (userList.isEmpty()) {
-            fragmentTransaction.replace(R.id.fragment_place, new DomainFragment());
+            //fragmentTransaction.replace(R.id.fragment_place, new DomainFragment());
+            showRegistrationFragmentPage();
         } else {
             User user = userList.get(0);
 
@@ -140,6 +141,14 @@ public class MainActivity extends AppCompatActivity {
     public void showHomePage() {
         Intent i = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(i);
+    }
+
+    public void showRegistrationFragmentPage() {
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_place, new RegistrationFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 
 }
