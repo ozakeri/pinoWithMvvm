@@ -6,12 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".activity.RequestActivity">
 
+
     <RelativeLayout
         android:id="@+id/toolbar_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/pino_one">
-
+        android:background="@color/pino_one"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -20,8 +23,8 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:text="میز خدمت بر خط فرمانداری تهران"
-            android:textSize="20sp"
-            android:textColor="@color/mdtp_red_focused"/>
+            android:textColor="@color/mdtp_red_focused"
+            android:textSize="20sp" />
 
         <RelativeLayout
             android:id="@+id/backIcon"
@@ -59,123 +62,205 @@
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/txt_nationalCode"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/bg_text_request"
-                android:gravity="center_vertical"
+                android:gravity="center"
                 android:hint=" کد ملی"
+                android:inputType="phone"
+                android:maxLength="10"
                 android:padding="2dp"
                 android:textColorHint="@color/transparentBlack"
-                android:textSize="16sp" />
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/txt_nameFamily"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_below="@+id/txt_nationalCode"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/bg_text_request"
-                android:gravity="center_vertical"
-                android:hint="نام و نام خانوادگی  "
-                android:padding="2dp"
-                android:textColorHint="@color/transparentBlack"
-                android:textSize="16sp" />
-
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/txt_fatherName"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_below="@+id/txt_nameFamily"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/bg_text_request"
-                android:gravity="center_vertical"
-                android:hint=" نام پدر "
-                android:padding="2dp"
-                android:textColorHint="@color/transparentBlack"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:id="@+id/status_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_fatherName"
-                android:orientation="horizontal">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_status"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/txt_nameFamily"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_text_request"
-                    android:gravity="center"
-                    android:hint=" وضعیت تاهل "
-                    android:padding="2dp"
-                    android:textColorHint="@color/transparentBlack"
-                    android:textSize="16sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_gender"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/txt_nameFamily"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_text_request"
-                    android:gravity="center"
-                    android:hint=" جنسیت "
-                    android:padding="2dp"
-                    android:textColorHint="@color/transparentBlack"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
+                android:textSize="18sp" />
 
             <RelativeLayout
-                android:id="@+id/marriageDate"
+                android:id="@+id/layout_main"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/status_layout">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_nationalCode"
+                android:background="@color/transparentBlackCopy">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_dateMarriageTitle"
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/txt_nameFamily"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_text_request"
+                    android:gravity="center_vertical"
+                    android:hint="نام و نام خانوادگی  "
+                    android:padding="2dp"
+                    android:textColorHint="@color/transparentBlack"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/txt_fatherName"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txt_nameFamily"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_text_request"
+                    android:gravity="center_vertical"
+                    android:hint=" نام پدر "
+                    android:padding="2dp"
+                    android:textColorHint="@color/transparentBlack"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/status_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_fatherName"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_status"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/txt_nameFamily"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_text_request"
+                        android:gravity="center"
+                        android:hint=" وضعیت تاهل "
+                        android:padding="2dp"
+                        android:textColorHint="@color/transparentBlack"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_gender"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/txt_nameFamily"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_text_request"
+                        android:gravity="center"
+                        android:hint=" جنسیت "
+                        android:padding="2dp"
+                        android:textColorHint="@color/transparentBlack"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/marriageDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/status_layout">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_dateMarriageTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="2dp"
+                        android:text=" تاریخ ازدواج "
+                        android:textColor="@color/mdtp_red_focused"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/marriageLinearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/txt_dateMarriageTitle"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_marriageDay"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_below="@+id/txt_nameFamily"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_text_request"
+                            android:gravity="center"
+                            android:hint=" روز "
+                            android:padding="2dp"
+                            android:textColorHint="@color/transparentBlack"
+                            android:textSize="16sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_marriageMonth"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_below="@+id/txt_nameFamily"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_text_request"
+                            android:gravity="center"
+                            android:hint=" ماه "
+                            android:padding="2dp"
+                            android:textColorHint="@color/transparentBlack"
+                            android:textSize="16sp" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_marriageYear"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_below="@+id/txt_nameFamily"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_text_request"
+                            android:gravity="center"
+                            android:hint=" سال "
+                            android:padding="2dp"
+                            android:textColorHint="@color/transparentBlack"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_dateTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/marriageDate"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
                     android:padding="2dp"
-                    android:text=" تاریخ ازدواج "
+                    android:text=" تاریخ تولد "
                     android:textColor="@color/mdtp_red_focused"
                     android:textSize="16sp" />
 
                 <LinearLayout
-                    android:id="@+id/marriageLinearLayout"
+                    android:id="@+id/dateLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/txt_dateMarriageTitle"
+                    android:layout_below="@+id/txt_dateTitle"
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_marriageDay"
+                        android:id="@+id/txt_day"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_below="@+id/txt_nameFamily"
@@ -192,7 +277,7 @@
                         android:textSize="16sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_marriageMonth"
+                        android:id="@+id/txt_month"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
                         android:layout_below="@+id/txt_nameFamily"
@@ -209,10 +294,9 @@
                         android:textSize="16sp" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_marriageYear"
+                        android:id="@+id/txt_year"
                         android:layout_width="0dp"
                         android:layout_height="40dp"
-                        android:layout_below="@+id/txt_nameFamily"
                         android:layout_marginStart="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="5dp"
@@ -227,235 +311,176 @@
 
                 </LinearLayout>
 
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/txt_dateTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/marriageDate"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:padding="2dp"
-                android:text=" تاریخ تولد "
-                android:textColor="@color/mdtp_red_focused"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:id="@+id/dateLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_dateTitle"
-                android:orientation="horizontal">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_day"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/txt_nameFamily"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_text_request"
-                    android:gravity="center"
-                    android:hint=" روز "
-                    android:padding="2dp"
-                    android:textColorHint="@color/transparentBlack"
-                    android:textSize="16sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_month"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/txt_nameFamily"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_text_request"
-                    android:gravity="center"
-                    android:hint=" ماه "
-                    android:padding="2dp"
-                    android:textColorHint="@color/transparentBlack"
-                    android:textSize="16sp" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_year"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_text_request"
-                    android:gravity="center"
-                    android:hint=" سال "
-                    android:padding="2dp"
-                    android:textColorHint="@color/transparentBlack"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/txt_addressTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/dateLayout"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:padding="2dp"
-                android:text=" آدرس "
-                android:textColor="@color/mdtp_red_focused"
-                android:textSize="16sp" />
-
-            <LinearLayout
-                android:id="@+id/address_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_addressTitle"
-                android:orientation="horizontal">
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/txt_city"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/txt_nameFamily"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_text_request"
-                    android:gravity="center"
-                    android:hint=" شهر "
-                    android:padding="2dp"
-                    android:textColorHint="@color/transparentBlack"
-                    android:textSize="16sp" />
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/txt_province"
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/txt_nameFamily"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_text_request"
-                    android:gravity="center"
-                    android:hint=" استان "
-                    android:padding="2dp"
-                    android:textColorHint="@color/transparentBlack"
-                    android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/txt_addressDescription"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_below="@+id/address_layout"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/bg_text_request"
-                android:gravity="center_vertical"
-                android:hint=" توضیحات آدرس "
-                android:padding="2dp"
-                android:textColorHint="@color/transparentBlack"
-                android:textSize="16sp" />
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/txt_requestDescription"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_below="@+id/txt_addressDescription"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/bg_text_request"
-                android:hint=" شرح درخواست "
-                android:lines="30"
-                android:padding="2dp"
-                android:scrollbars="vertical"
-                android:textColorHint="@color/transparentBlack"
-                android:textSize="16sp" />
-
-
-            <RelativeLayout
-                android:id="@+id/layout_attach"
-                android:layout_width="110dp"
-                android:layout_height="40dp"
-                android:layout_below="@+id/txt_requestDescription"
-                android:layout_margin="5dp"
-                android:padding="5dp"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/gradient">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_attach"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/txt_addressTitle"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/dateLayout"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:padding="2dp"
+                    android:text=" آدرس "
+                    android:textColor="@color/mdtp_red_focused"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/address_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_addressTitle"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/txt_city"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/txt_nameFamily"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_text_request"
+                        android:gravity="center"
+                        android:hint=" شهر "
+                        android:padding="2dp"
+                        android:textColorHint="@color/transparentBlack"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/txt_province"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/txt_nameFamily"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_text_request"
+                        android:gravity="center"
+                        android:hint=" استان "
+                        android:padding="2dp"
+                        android:textColorHint="@color/transparentBlack"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/txt_addressDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/address_layout"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_text_request"
+                    android:gravity="center_vertical"
+                    android:hint=" توضیحات آدرس "
+                    android:padding="2dp"
+                    android:textColorHint="@color/transparentBlack"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/txt_requestDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/txt_addressDescription"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/bg_text_request"
+                    android:hint=" شرح درخواست "
+                    android:lines="30"
+                    android:padding="2dp"
+                    android:scrollbars="vertical"
+                    android:textColorHint="@color/transparentBlack"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:id="@+id/layout_attach"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/txt_requestDescription"
                     android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
-                    android:text="افزودن پیوست  "
-                    android:textColor="@color/mdtp_red_focused" />
+                    android:background="@drawable/gradient"
+                    android:padding="5dp">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/img_attach"
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_attach"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:text="افزودن پیوست  "
+                        android:textColor="@color/mdtp_red_focused" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_attach"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/txt_attach"
+                        android:background="@drawable/ic_baseline_attach_file_24" />
+
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_attach"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/txt_attach"
-                    android:background="@drawable/ic_baseline_attach_file_24" />
+                    android:layout_below="@+id/layout_attach"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerHorizontal="true"/>
 
+                <Button
+                    android:id="@+id/btn_sendRequest"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/recycler_view_attach"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/gradient"
+                    android:elevation="10dp"
+                    android:stateListAnimator="@null"
+                    android:text=" ثبت درخواست "
+                    android:textColor="@color/mdtp_red_focused"
+                    android:textSize="18sp"
+                    android:translationZ="10dp" />
 
             </RelativeLayout>
 
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_view_attach"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_attach"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_centerHorizontal="true"/>
-
-            <Button
-                android:id="@+id/btn_sendRequest"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_below="@+id/recycler_view_attach"
-                android:layout_centerInParent="true"
-                android:layout_margin="20dp"
-                android:background="@drawable/gradient"
-                android:elevation="10dp"
-                android:stateListAnimator="@null"
-                android:text=" ثبت درخواست "
-                android:textColor="@color/mdtp_red_focused"
-                android:textSize="18sp"
-                android:translationZ="10dp" />
 
 
         </RelativeLayout>
 
     </ScrollView>
 
+    <com.github.rahatarmanahmed.cpv.CircularProgressView
+        android:id="@+id/circularProgressbar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        app:cpv_animAutostart="true"
+        app:cpv_color="@color/mdtp_accent_color_dark"
+        app:cpv_indeterminate="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

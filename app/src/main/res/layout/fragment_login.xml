@@ -46,7 +46,7 @@
                 android:textColor="@color/mdtp_transparent_black"
                 android:textSize="18sp" />
 
-            <com.gap.pino_copy.widget.CustomEditText
+            <com.gap.pino_copy.util.CustomTextView
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,13 +60,14 @@
             <com.gap.pino_copy.widget.CustomEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:textColor="@color/pino_two"
                 android:layout_marginLeft="20dp"
                 android:gravity="center"
                 android:inputType="textPassword"
+                android:background="@drawable/bg_text_request"
                 android:textSize="14sp"/>
 
             <ProgressBar

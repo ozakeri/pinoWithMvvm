@@ -38,7 +38,7 @@ public class LoginFragment extends Fragment {
     ProgressBar progressBar;
     TextView btnLogin;
     TextView txtForgotPass;
-    EditText usernameEditText;
+    TextView usernameEditText;
     EditText passwordEditText;
     private CoreService coreService;
 
@@ -57,7 +57,7 @@ public class LoginFragment extends Fragment {
         AppController application = (AppController) Objects.requireNonNull(getActivity()).getApplication();
         User user = application.getCurrentUser();
 
-        usernameEditText = (EditText) view.findViewById(R.id.username);
+        usernameEditText = view.findViewById(R.id.username);
         usernameEditText.setText(user.getUsername());
         usernameEditText.setEnabled(false);
 

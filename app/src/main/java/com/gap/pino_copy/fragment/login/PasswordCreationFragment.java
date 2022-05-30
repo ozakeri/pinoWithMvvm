@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -48,7 +49,7 @@ import java.util.Objects;
 public class PasswordCreationFragment extends Fragment {
 
     ProgressDialog progressBar;
-    EditText usernameET;
+    TextView usernameET;
     //EditText bisPasswordET;
     EditText passwordEditText;
     EditText confirmPasswordEditText;
@@ -64,10 +65,10 @@ public class PasswordCreationFragment extends Fragment {
 
         //progressBar = (ProgressBar) view.findViewById(R.id.progress);
 
-        usernameET = (EditText) view.findViewById(R.id.username);
+        usernameET = view.findViewById(R.id.username);
         //bisPasswordET = (EditText) view.findViewById(R.id.bisPassword);
-        passwordEditText = (EditText) view.findViewById(R.id.password);
-        confirmPasswordEditText = (EditText) view.findViewById(R.id.confirmPassword);
+        passwordEditText =  view.findViewById(R.id.password);
+        confirmPasswordEditText = view.findViewById(R.id.confirmPassword);
 
         application = (AppController) getActivity().getApplication();
         usernameET.setEnabled(false);

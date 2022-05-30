@@ -5,8 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -22,8 +27,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.gap.pino_copy.R;
+import com.gap.pino_copy.common.CommonUtil;
 import com.gap.pino_copy.util.GeneralLogic;
 import com.gap.pino_copy.widget.persiandatepicker.PersianDatePicker;
+import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.jaiselrahman.filepicker.activity.DirSelectActivity;
 import com.jaiselrahman.filepicker.activity.FilePickerActivity;
 import com.jaiselrahman.filepicker.activity.PickFile;
@@ -39,11 +46,13 @@ public class RequestActivity extends AppCompatActivity {
     private AppCompatTextView txt_year, txt_month, txt_day, txt_gender, txt_status, txt_marriageYear, txt_marriageMonth, txt_marriageDay, txt_dateMarriageTitle;
     private EditText txt_nationalCode;
     private LinearLayout marriageLinearLayout;
-    private RelativeLayout layout_attach;
+    private RelativeLayout layout_attach,layout_main;
     private ArrayList<MediaFile> mediaFiles = new ArrayList<>();
     private final static int FILE_REQUEST_CODE = 1;
     private static final int MY_PERMISSIONS_REQUEST = 100;
     private int fileType = 0;
+    final Handler handler = new Handler(Looper.getMainLooper());
+    private CircularProgressView circularProgressbar;
 
 
     @Override
@@ -65,9 +74,48 @@ public class RequestActivity extends AppCompatActivity {
         txt_marriageDay = findViewById(R.id.txt_marriageDay);
         marriageLinearLayout = findViewById(R.id.marriageLinearLayout);
         layout_attach = findViewById(R.id.layout_attach);
+        layout_main = findViewById(R.id.layout_main);
+        circularProgressbar = findViewById(R.id.circularProgressbar);
 
+        setViewAndChildrenEnabled(layout_main,false);
         txt_dateMarriageTitle.setVisibility(View.GONE);
         marriageLinearLayout.setVisibility(View.GONE);
+        circularProgressbar.setVisibility(View.GONE);
+
+        txt_nationalCode.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 9){
+                    circularProgressbar.setVisibility(View.VISIBLE);
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (nationalCodeIsValid(txt_nationalCode.getText().toString())) {
+                                setViewAndChildrenEnabled(layout_main,true);
+                                layout_main.setBackgroundResource(R.color.white);
+                            } else {
+                                setViewAndChildrenEnabled(layout_main,false);
+                                layout_main.setBackgroundResource(R.color.custom_toast_text);
+                                showToast(" کد ملی اشتباه است ");
+                            }
+                            circularProgressbar.setVisibility(View.GONE);
+                        }
+                    }, 2000);
+
+
+                }
+            }
+        });
 
         txt_marriageYear.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -174,11 +222,7 @@ public class RequestActivity extends AppCompatActivity {
         findViewById(R.id.btn_sendRequest).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (nationalCodeIsValid(txt_nationalCode.getText().toString())) {
 
-                } else {
-
-                }
             }
         });
     }
@@ -338,6 +382,23 @@ public class RequestActivity extends AppCompatActivity {
 
             } else {
                 Toast.makeText(RequestActivity.this, "Image not selected", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public void showToast(String param){
+        Toast toast = Toast.makeText(RequestActivity.this, param, Toast.LENGTH_LONG);
+        CommonUtil.showToast(toast,RequestActivity.this);
+        toast.show();
+    }
+
+    private static void setViewAndChildrenEnabled(View view, boolean enabled) {
+        view.setEnabled(enabled);
+        if (view instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view;
+            for (int i = 0; i < viewGroup.getChildCount(); i++) {
+                View child = viewGroup.getChildAt(i);
+                setViewAndChildrenEnabled(child, enabled);
             }
         }
     }

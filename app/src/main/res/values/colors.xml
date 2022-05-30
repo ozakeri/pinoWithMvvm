@@ -98,5 +98,6 @@
     <color name="bgColor">#f4f6f9</color>
     <color name="txtColor_sync">#848688</color>
     <color name="transparentBlack">#56000000</color>
+    <color name="transparentBlackCopy">#34BCBABA</color>
 
 </resources>

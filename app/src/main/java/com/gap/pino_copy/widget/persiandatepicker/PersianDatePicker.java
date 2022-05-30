@@ -159,8 +159,8 @@ public class PersianDatePicker extends LinearLayout {
         numberPicker.setSelectedTextSize(R.dimen.selected_text_size);
 
         // Set text color
-        numberPicker.setTextColor(ContextCompat.getColor(context, R.color.colorPrimary));
-        numberPicker.setTextColorResource(R.color.colorPrimary);
+        numberPicker.setTextColor(ContextCompat.getColor(context, R.color.transparentBlack));
+        numberPicker.setTextColorResource(R.color.transparentBlack);
 
         // Set text size
         numberPicker.setTextSize(getResources().getDimension(R.dimen.text_size));
